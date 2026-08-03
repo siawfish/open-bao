@@ -21,6 +21,7 @@ import (
 	dbMysql "github.com/openbao/openbao/v2/internal/builtin/database/mysql"
 	dbPostgres "github.com/openbao/openbao/v2/internal/builtin/database/postgresql"
 	dbValkey "github.com/openbao/openbao/v2/internal/builtin/database/valkey"
+	logicalHubtelProjects "github.com/openbao/openbao/v2/internal/builtin/logical/hubtelprojects"
 	logicalKube "github.com/openbao/openbao/v2/internal/builtin/logical/kubernetes"
 	logicalKv "github.com/openbao/openbao/v2/internal/builtin/logical/kv"
 	logicalLDAP "github.com/openbao/openbao/v2/internal/builtin/logical/openldap"
@@ -85,7 +86,8 @@ func newRegistry() *registry {
 			"valkey-database-plugin":     {Factory: dbValkey.New},
 		},
 		logicalBackends: map[string]logicalBackend{
-			"kubernetes": {Factory: logicalKube.Factory},
+			"hubtel-projects": {Factory: logicalHubtelProjects.Factory},
+			"kubernetes":      {Factory: logicalKube.Factory},
 			"kv":         {Factory: logicalKv.Factory},
 			"openldap":   {Factory: logicalLDAP.Factory},
 			"ldap":       {Factory: logicalLDAP.Factory},

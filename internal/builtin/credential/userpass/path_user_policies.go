@@ -15,7 +15,7 @@ import (
 
 func pathUserPolicies(b *backend) *framework.Path {
 	return &framework.Path{
-		Pattern: "users/" + framework.GenericNameRegex("username") + "/policies$",
+		Pattern: "users/" + framework.GenericNameWithAtRegex("username") + "/policies$",
 
 		DisplayAttrs: &framework.DisplayAttributes{
 			OperationPrefix: operationPrefixUserpass,

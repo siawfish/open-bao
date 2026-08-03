@@ -61,6 +61,7 @@ bao auth enable "userpass"
 
 # Enable secrets plugins
 bao secrets enable "database"
+bao secrets enable "hubtel-projects"
 bao secrets enable "kubernetes"
 bao secrets enable -path="kv-v1/" -version=1 "kv"
 bao secrets enable -path="kv-v2/" -version=2 "kv"

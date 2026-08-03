@@ -51,7 +51,7 @@ func pathUsersList(b *backend) *framework.Path {
 
 func pathUsers(b *backend) *framework.Path {
 	p := &framework.Path{
-		Pattern: "users/" + framework.GenericNameRegex("username"),
+		Pattern: "users/" + framework.GenericNameWithAtRegex("username"),
 
 		DisplayAttrs: &framework.DisplayAttributes{
 			OperationPrefix: operationPrefixUserpass,
